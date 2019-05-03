@@ -1,0 +1,1201 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+    <title> La Positiva - Siniestro Vehícular</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Basic Styles -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <!-- SmartAdmin RTL Support -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css">
+    <!-- We recommend you use "your_style.css" to override SmartAdmin
+         specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+    <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+    <!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <!-- GOOGLE FONT -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+    <!-- Specifying a Webpage Icon for Web Clip
+         Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+    <link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+</head>
+<!--
+
+TABLE OF CONTENTS.
+
+Use search to find needed section.
+
+===================================================================
+
+|  01. #CSS Links                |  all CSS links and file paths  |
+|  02. #FAVICONS                 |  Favicon links and file paths  |
+|  03. #GOOGLE FONT              |  Google font link              |
+|  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
+|  05. #BODY                     |  body tag                      |
+|  06. #HEADER                   |  header tag                    |
+|  07. #PROJECTS                 |  project lists                 |
+|  08. #TOGGLE LAYOUT BUTTONS    |  layout buttons and actions    |
+|  09. #MOBILE                   |  mobile view dropdown          |
+|  10. #SEARCH                   |  search field                  |
+|  11. #NAVIGATION               |  left panel & navigation       |
+|  12. #RIGHT PANEL              |  right panel userlist          |
+|  13. #MAIN PANEL               |  main panel                    |
+|  14. #MAIN CONTENT             |  content holder                |
+|  15. #PAGE FOOTER              |  page footer                   |
+|  16. #SHORTCUT AREA            |  dropdown shortcuts area       |
+|  17. #PLUGINS                  |  all scripts and plugins       |
+
+===================================================================
+
+-->
+<!-- #BODY -->
+<!-- Possible Classes
+
+    * 'smart-style-{SKIN#}'
+    * 'smart-rtl'         - Switch theme mode to RTL
+    * 'menu-on-top'       - Switch to top navigation (no DOM change required)
+    * 'no-menu'			  - Hides the menu completely
+    * 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+    * 'fixed-header'      - Fixes the header
+    * 'fixed-navigation'  - Fixes the main menu
+    * 'fixed-ribbon'      - Fixes breadcrumb
+    * 'fixed-page-footer' - Fixes footer
+    * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+-->
+<body class="smart-style-2">
+    <!-- HEADER -->
+    <header id="header" style="background-color:white;height:80px !important;top:-20px !important">
+        <div id="logo-group">
+            <!-- PLACE YOUR LOGO HERE -->
+            <span id="logo"> <img src="img/logo_old.png" alt="LaPositivaSeguros"> </span>
+            <!-- END LOGO PLACEHOLDER -->
+        </div>
+
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+            <!-- collapse menu button -->
+            <div id="hide-menu" class="btn-header pull-right">
+                <span> <!--<a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a>--> </span>
+            </div>
+            <!-- end collapse menu -->
+            <!-- #MOBILE -->
+            <!-- Top menu profile link : this shows only when top menu is active -->
+            <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+                <li class="">
+                    <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+                        <img src="img/avatars/male.png" alt="John Doe" class="online" />
+                    </a>
+                </li>
+            </ul>
+            <!-- logout button -->
+            <!--<div id="logout" class="btn-header transparent pull-right">
+                <span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
+            </div>-->
+            <!-- end logout button -->
+            <!-- search mobile button (this is hidden till mobile view port) -->
+            <div id="search-mobile" class="btn-header transparent pull-right">
+                <!--<span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>-->
+            </div>
+            <!-- end search mobile button -->
+            <!-- input: search field -->
+            <!-- end input: search field -->
+            <!-- fullscreen button -->
+            <div id="fullscreen" class="btn-header transparent pull-right">
+                <!--<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>-->
+            </div>
+            <!-- end fullscreen button -->
+            <!-- multiple lang dropdown : find all flags in the flags page -->
+            <!--<ul class="header-dropdown-list hidden-xs">
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/blank.gif" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li class="active">
+                            <a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-kr" alt="Korea"> 한국어</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>-->
+            <!-- end multiple lang -->
+        </div>
+        <!-- end pulled right: nav area -->
+    </header>
+    <!-- END HEADER -->
+    <!-- Left panel : Navigation area -->
+    <!-- Note: This width of the aside area can be adjusted through LESS variables -->
+    <aside id="left-panel">
+        <!-- User info -->
+        <!--<div class="login-info">
+            <span>
+                 User image size is adjusted inside CSS, it should stay as it
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="img/avatars/male.png" alt="me" class="online" />
+                    <span>
+                        john.doe1
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>-->
+        <!-- end user info -->
+        <nav>
+            <!--
+            NOTE: Notice the gaps after each icon usage <i></i>..
+            Please note that these links work a bit different than
+            traditional href="" links. See documentation for details.
+            -->
+            <ul>
+                <li class="active open">
+                    <a href="#"><img src="img/persona_auto.png" alt="PersonaAuto"> <span class="menu-item-parent">Operaciones</span></a>
+                    <ul style="display:block;">
+                        <li class="active">
+                            <a href="datatables.html?clie=773348">Inspecciones</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <span class="minifyme" data-action="minifyMenu">
+            <i class="fa fa-arrow-circle-left hit"></i>
+        </span>
+    </aside>
+    <!-- END NAVIGATION -->
+    <!-- MAIN PANEL -->
+    <div id="main" role="main">
+        <!-- RIBBON -->
+        <div id="ribbon">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb">
+                <li>
+                    <img src="img/persona_auto.png" alt="PersonaAuto">
+                    Siniestro Vehícular
+                </li>
+                <!--<li>Inspección Virtual</li>-->
+            </ol>
+            <!-- end breadcrumb -->
+            <!-- You can also add more buttons to the
+            ribbon for further usability
+
+            Example below:
+
+            <span class="ribbon-button-alignment pull-right">
+            <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+            <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+            <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+            </span> -->
+        </div>
+        <!-- END RIBBON -->
+        <!-- MAIN CONTENT -->
+        <div id="content">
+            <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+                    <h1 class="page-title txt-color-blueDark">
+                        <!--<img src="img/persona_auto.png" alt="PersonaAuto">
+                        Vehículo-->
+                    </h1>
+                </div>
+            </div>
+            <!-- widget grid -->
+            <section id="widget-grid" class="">
+                <!-- row -->
+                <div class="row">
+                    <!-- NEW WIDGET START -->
+                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <!-- Widget ID (each widget will need unique ID)-->
+                        <label id="txtBienvenida" style="font-size:14px;">
+                            <b>Bienvenido a siniestro vehícular.</b><br />
+                            <p align="justify">
+                               Hacer clic en iniciar cuando esté listo.
+                            </p>
+                        </label>
+                        <div class="jarviswidget jarviswidget-color-red" id="wid-id-3" data-widget-editbutton="true" data-widget-deletebutton="false" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-collapsed="false">
+                            <!-- widget options:
+                            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                            data-widget-colorbutton="false"
+                            data-widget-editbutton="false"
+                            data-widget-togglebutton="false"
+                            data-widget-deletebutton="false"
+                            data-widget-fullscreenbutton="false"
+                            data-widget-custombutton="false"
+                            data-widget-collapsed="true"
+                            data-widget-sortable="false"
+
+                            -->
+                            <header style="background-color:#ED6E04;">
+                                <!--<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                <h2></h2>-->
+                            </header>
+                            <!-- widget div-->
+                            <div>
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
+                                </div>
+                                <!-- end widget edit box -->
+                                <!-- widget content -->
+                                <div class="widget-body no-padding">
+                                    <div id="gridAutoInspeccion">
+                                    </div>
+                                    <!--<br />
+                                    <a href="https://api.whatsapp.com/send?phone=51999222333" class="btn btn-lg btn-default" id="btnEnviarMensajeWS" style="width:100%;background-color:#ED6E04;"><font color="White"> <img src="img/whatsapp.png" alt="PersonaAuto"> Más tarde por Whatsapp 999 222 333</font></a>
+                                    <br />
+                                    <br />
+                                    <a href="javascript:void(0);" class="btn btn-lg btn-default" id="btnProgramarFecha" onclick="ProgramarFechaX()" style="width:100%;background-color:#ED6E04;"><font color="White"> <img src="img/calendario.png" alt="PersonaAuto"> Programar una fecha</font></a>-->
+                                    <label id="txtClienteIni" style="font-size:2px;"></label>
+                                    <label id="txtLatitudXY" style="font-size:1px;">0.00</label>
+                                    <label id="txtLongitudXY" style="font-size:1px;">0.00</label>
+                                    <!--<table id="datatable_tabletools" class="table table-striped table-bordered table-hover" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th data-class="expand"></th>
+                                                <th data-class="expand">Asegurado</th>
+                                                <th data-class="expand">Placa</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a class="btn btn-primary btn-sm" href="wizard1.html">Registrar</a></td>
+                                                <td>Jennifer</td>
+                                                <td>35728</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a class="btn btn-primary btn-sm" href="wizard2.html">Registrar</a></td>
+                                                <td>Clark</td>
+                                                <td>7162</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a class="btn btn-primary btn-sm" href="wizard3.html;">Registrar</a></td>
+                                                <td>Brendan</td>
+                                                <td>98611</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>-->
+                                </div>
+                                <!-- end widget div -->
+                            </div>
+                            <!-- end widget -->
+
+
+
+                    </article>
+                    <!-- WIDGET END -->
+
+                </div>
+                <!-- end row -->
+                <!-- end row -->
+            </section>
+            <!-- end widget grid -->
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!-- END MAIN PANEL -->
+    <!-- PAGE FOOTER -->
+    <div class="page-footer" style="background-color:#ED6E04">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <span class="txt-color-white">La Positiva - Seguros 1.0 <span class="hidden-xs"> - Web Siniestro Vehícular</span> © 2019</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 text-right hidden-xs">
+                <div class="txt-color-white inline-block">
+                    <i class="txt-color-blueLight hidden-mobile">Última actividad <i class="fa fa-clock-o"></i> <strong>hace 52 minutos &nbsp;</strong> </i>
+                    <div class="btn-group dropup">
+                        <button class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white" data-toggle="dropdown">
+                            <i class="fa fa-link"></i> <span class="caret"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE FOOTER -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModalProgramacion" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body no-padding">
+
+                    <form id="login-form" class="smart-form">
+
+                        <fieldset>
+                            <legend>Programar Inspección</legend>
+                            <section>
+                                <div class="row">
+                                    <label class="label col col-2">Fecha y hora programada</label>
+                                    <div class="col col-10">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <label class="input">
+                                                        <i class="icon-append fa fa-calendar"></i>
+                                                        <input type="text" name="startdate" id="txtFechaP" class="datepicker" data-dateformat='dd-mm-yy'>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="select">
+                                                        <select id="cmbHora">
+                                                            <option value="0" selected="" disabled="">Hora</option>
+                                                            <option value="1">08:00:00</option>
+                                                            <option value="2">09:00:00</option>
+                                                            <option value="3">10:00:00</option>
+                                                            <option value="4">11:00:00</option>
+                                                            <option value="5">12:00:00</option>
+                                                            <option value="6">13:00:00</option>
+                                                            <option value="7">14:00:00</option>
+                                                            <option value="8">15:00:00</option>
+                                                            <option value="9">16:00:00</option>
+                                                            <option value="10">17:00:00</option>
+                                                            <option value="11">18:00:00</option>
+                                                        </select> <i></i>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="row">
+                                    <label class="label col col-2">Dirección</label>
+                                    <div class="col col-10">
+                                        <label class="input">
+                                            <input class="form-control input-lg" type="text" name="fname" size="250" id="txtDireccion">
+                                        </label>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="row">
+                                    <label class="label col col-2">Distrito</label>
+                                    <div class="col col-10">
+                                        <label class="input">
+                                            <input class="form-control input-lg" type="text" name="fname" size="50" id="txtDistrito">
+                                        </label>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="row">
+                                    <label class="label col col-2">Celular</label>
+                                    <div class="col col-10">
+                                        <label class="input">
+                                            <input class="form-control input-lg" type="text" id="txtTelefono" data-mask="999-999-999">
+                                        </label>
+                                    </div>
+                                </div>
+                            </section>
+                        </fieldset>
+                        <footer>
+                            <button type="submit" style="background-color:#ED6E04;border-color:#ED6E04" class="btn btn-primary" onclick="GrabarProgramXT(); return false">
+                                <font color="white">Grabar</font>
+                            </button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancelar
+                            </button>
+                        </footer>
+                    </form>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal fade" id="myModalProgSuccesful" tabindex="-1" role="alertdialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body no-padding">
+                    <form id="ConfirmGF-form" class="smart-form">
+                        <fieldset>
+                            <section>
+                                <div class="row">
+                                    <div class="col col-10">
+                                        <img src="img/successful.png" alt="" id="imgSuccsfulXSA" />
+                                        <label id="oMensajeProgXA">Programación registrada correctamente.</label>
+                                    </div>
+                                </div>
+                            </section>
+                        </fieldset>
+                        <footer>
+                            <button type="button" style="background-color:#ED6E04;border-color:#ED6E04" class="btn btn-default" data-dismiss="modal">
+                                <font color="white">Aceptar</font>
+                            </button>
+                        </footer>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /.modal -->
+    <!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+    Note: These tiles are completely responsive,
+    you can add as many as you like
+    -->
+    <!-- END SHORTCUT AREA -->
+    <!--================================================== -->
+    <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+    <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        if (!window.jQuery) {
+            document.write('<script src="js/libs/jquery-3.2.1.min.js"><\/script>');
+        }
+    </script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        if (!window.jQuery.ui) {
+            document.write('<script src="js/libs/jquery-ui.min.js"><\/script>');
+        }
+    </script>
+    <!-- IMPORTANT: APP CONFIG -->
+    <script src="js/app.config.js"></script>
+    <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+    <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+    <!-- BOOTSTRAP JS -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- CUSTOM NOTIFICATION -->
+    <script src="js/notification/SmartNotification.min.js"></script>
+    <!-- JARVIS WIDGETS -->
+    <script src="js/smartwidgets/jarvis.widget.min.js"></script>
+    <!-- EASY PIE CHARTS -->
+    <script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+    <!-- SPARKLINES -->
+    <script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+    <!-- JQUERY VALIDATE -->
+    <script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+    <!-- JQUERY MASKED INPUT -->
+    <script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+    <!-- JQUERY SELECT2 INPUT -->
+    <script src="js/plugin/select2/select2.min.js"></script>
+    <!-- JQUERY UI + Bootstrap Slider -->
+    <script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+    <!-- browser msie issue fix -->
+    <script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+    <!-- FastClick: For mobile devices -->
+    <script src="js/plugin/fastclick/fastclick.min.js"></script>
+    <!--[if IE 8]>
+
+    <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+    <![endif]-->
+    <!-- Demo purpose only -->
+    <!--<script src="js/demo.min.js"></script>-->
+    <!-- MAIN APP JS FILE -->
+    <script src="js/app.min.js"></script>
+    <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
+    <!-- Voice command : plugin -->
+    <script src="js/speech/voicecommand.min.js"></script>
+    <!-- SmartChat UI : plugin -->
+    <script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
+    <script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
+    <!-- PAGE RELATED PLUGIN(S) -->
+    <script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
+    <script src="js/plugin/datatables/dataTables.colVis.min.js"></script>
+    <script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
+    <script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
+
+
+    <!-- KENDO -->
+    <link rel="stylesheet" href="styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="styles/kendo.mobile.all.min.css" />
+    <!--<link rel="stylesheet" href="styles/kendo.default.mobile.min.css" />-->
+    <!--<script type="text/javascript" src="kendo/jquery.min.js"></script>-->
+    <!--<script type="text/javascript" src="../../kendo/kendo.web.min.js"></script>-->
+    <script type="text/javascript" src="kendo/kendo.all.min.js"></script>
+    <!--<script type="text/javascript" src="../../kendo/jszip.min.js"> </script>-->
+
+    <script>
+
+
+
+        // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+        $(document).ready(function () {
+
+            pageSetUp();
+
+
+            /* // DOM Position key index //
+
+
+            l - Length changing (dropdown)
+            f - Filtering input (search)
+            t - The Table! (datatable)
+            i - Information (records)
+            p - Pagination (paging)
+            r - pRocessing
+            < and > - div elements
+            <"#id" and > - div with an id
+            <"class" and > - div with a class
+            <"#id.class" and > - div with an id and class
+
+            Also see: http://legacy.datatables.net/usage/features
+            */
+
+            /* BASIC ;*/
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            $('#dt_basic').dataTable({
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+
+            /* END BASIC */
+
+            /* COLUMN FILTER  */
+            var otable = $('#datatable_fixed_column').DataTable({
+                //"bFilter": false,
+                //"bInfo": false,
+                //"bLengthChange": false
+                //"bAutoWidth": false,
+                //"bPaginate": false,
+                //"bStateSave": true // saves sort state using localStorage
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6 hidden-xs'f><'col-sm-6 col-xs-12 hidden-xs'<'toolbar'>>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_datatable_fixed_column) {
+                        responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_datatable_fixed_column.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_datatable_fixed_column.respond();
+                }
+
+            });
+
+            // custom toolbar
+            $("div.toolbar").html('<div class="text-right"><img src="img/logo.png" alt="LaPositivaSeguros" style="width: 111px; margin-top: 3px; margin-right: 10px;"></div>');
+
+            // Apply the filter
+            $("#datatable_fixed_column thead th input[type=text]").on('keyup change', function () {
+
+                otable
+                    .column($(this).parent().index() + ':visible')
+                    .search(this.value)
+                    .draw();
+
+            });
+            /* END COLUMN FILTER */
+
+            /* COLUMN SHOW - HIDE */
+            $('#datatable_col_reorder').dataTable({
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'C>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+                "autoWidth": true,
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_datatable_col_reorder) {
+                        responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_datatable_col_reorder.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_datatable_col_reorder.respond();
+                }
+            });
+
+            /* END COLUMN SHOW - HIDE */
+
+            /* TABLETOOLS */
+            $('#datatable_tabletools').dataTable({
+
+                // Tabletools options:
+                //   https://datatables.net/extensions/tabletools/button_options
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'T>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+                "oLanguage": {
+                    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+                },
+                "oTableTools": {
+                    "aButtons": [
+                        "copy",
+                        "csv",
+                        "xls",
+                        {
+                            "sExtends": "pdf",
+                            "sTitle": "LaPositivaSeguros_PDF",
+                            "sPdfMessage": "La Positiva - Seguros PDF Export",
+                            "sPdfSize": "letter"
+                        },
+                        {
+                            "sExtends": "print",
+                            "sMessage": "Generated by La Positiva - Seguros <i>(press Esc to close)</i>"
+                        }
+                    ],
+                    "sSwfPath": "js/plugin/datatables/swf/copy_csv_xls_pdf.swf"
+                },
+                "autoWidth": true,
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_datatable_tabletools) {
+                        responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_datatable_tabletools.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_datatable_tabletools.respond();
+                }
+            });
+
+            /* END TABLETOOLS */
+
+            //LoadDataGrid();
+        })
+
+        var URLX = "http://190.102.130.199:8081/wsAutoInspeccion.asmx/";
+        //var URLX = "http://localhost:8063/wsAutoInspeccion.asmx/";
+        //var URLX = "http://192.168.1.177:8081/wsAutoinspeccion.asmx/";
+        //var URLX = "https://inspeccionvirtual.a365.com.pe/";
+        var oToken = "123";
+
+        //var app = new kendo.mobile.Application(document.body, { skin: "nova" });
+
+        $(window).on('load', function () {
+            //getLocation();
+            var queryStr = window.location.search;
+            var paramPairs = queryStr.substr(1).split('&');
+            var params = {};
+            for (var i = 0; i < paramPairs.length; i++) {
+                var parts = paramPairs[i].split('=');
+                params[parts[0]] = parts[1];
+            }
+            GrabarClickAccesoL(params.clie);
+
+            document.getElementById("txtClienteIni").value = params.clie;
+            LoadDataGridL(params.clie);
+        });
+
+        //function getLocation() {
+        //    if (navigator.geolocation) {
+        //        navigator.geolocation.getCurrentPosition(showPosition);
+        //    } else {
+        //        //x.innerHTML = "Geolocation is not supported by this browser.";
+        //    }
+        //}
+
+        function showPosition(position) {
+            document.getElementById("txtLatitudXY").innerText = position.coords.latitude;
+            document.getElementById("txtLongitudXY").innerText = position.coords.longitude;
+        }
+
+        function GrabarClickAccesoL(oIdClie) {
+            var oLatXY = document.getElementById("txtLatitudXY").innerText;
+            var oLongXY = document.getElementById("txtLongitudXY").innerText;
+            //obteniendo fecha y hora
+            var d = new Date($.now());
+            var oDia = d.getDay().toString();
+            var oMes = d.getMonth().toString();
+            if (oDia.length == 1) {
+                oDia = "0" + oDia;
+            }
+            if (oMes.length == 1) {
+                oMes = "0" + oMes;
+            }
+
+            var methodName = "GrabarClickLink";
+            var XDTFechaHoraLog = oDia + "-" + oMes + "-" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+            $.ajax({
+                url: URLX + methodName,
+                type: "POST",
+                dataType: "json",
+                data: {
+                    oIdCliente: oIdClie,
+                    oLat: oLatXY,
+                    oLong: oLongXY,
+                    oFechaHora: XDTFechaHoraLog,
+                    oToken: oToken,
+                },
+                success: function (data1) {
+
+                },
+                error: function (err) {
+                    //console.log(err);
+                }
+            });
+        }
+
+        function GrabarClickAccesoP(oIdClie) {
+            var oLatXY = document.getElementById("txtLatitudXY").innerText;
+            var oLongXY = document.getElementById("txtLongitudXY").innerText;
+            //obteniendo fecha y hora
+            var d = new Date($.now());
+            var oDia = d.getDay().toString();
+            var oMes = d.getMonth().toString();
+            if (oDia.length == 1) {
+                oDia = "0" + oDia;
+            }
+            if (oMes.length == 1) {
+                oMes = "0" + oMes;
+            }
+
+            var methodName = "GrabarClickLink";
+
+            var oObjClikAc = new Object();
+            oObjClikAc.oIdCliente = oIdClie;
+            oObjClikAc.oLat = oLatXY;
+            oObjClikAc.oLong = oLongXY;
+            oObjClikAc.oFechaHora = oDia + "-" + oMes + "-" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+            oObjClikAc.oToken = oToken;
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": URLX + methodName,
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/json"
+                },
+                "processData": false,
+                "data": JSON.stringify(oObjClikAc),
+            }
+            $.ajax(settings).done(function (data1) {
+                if (data1 == '["1"]') {
+
+                }
+                else {
+
+                }
+            }).fail(function (err) {
+                console.log(err);
+            }).always(function (Alwa) {
+                //alert(Alwa);
+            });
+        }
+
+        function LoadDataGridL(oIdClie) {
+            var methodName = "LoadSiniestroxCliente";
+            //var oIdClie = "773348";
+
+            $.ajax({
+                url: URLX + methodName,
+                type: "POST",   
+                dataType: "json",
+                data: {
+                    oIdCliente: oIdClie,
+                    oToken: oToken,
+                },
+                success: function (data1) {
+                    var sampleData = JSON.stringify(data1);
+                    var sampleData1 = JSON.parse(sampleData);
+                    CrearGridAutoInspec(sampleData1);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+
+        function LoadDataGridP(oIdClie) {
+            var methodName = "LoadAutoInspecciones";
+            //var oIdClie = "773348";
+
+            var oObjListInsp = new Object();
+            oObjListInsp.oIdCliente = oIdClie;
+            oObjListInsp.oToken = oToken;
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": URLX + methodName,
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/json"
+                },
+                "processData": false,
+                "data": JSON.stringify(oObjListInsp),
+            }
+            $.ajax(settings).done(function (data1) {
+                //var sampleData = JSON.stringify(data1);
+                var sampleData1 = JSON.parse(data1);
+                CrearGridAutoInspec(sampleData1);
+            }).fail(function (err) {
+                console.log(err);
+            }).always(function (Alwa) {
+                //alert(Alwa);
+            });
+
+            //$.ajax({
+            //    url: URLX + methodName,
+            //    type: "POST",
+            //    dataType: "json",
+            //    data: {
+            //        oIdCliente: oIdClie,
+            //        oToken: oToken,
+            //    },
+            //    success: function (data1) {
+            //        var sampleData = JSON.stringify(data1);
+            //        var sampleData1 = JSON.parse(sampleData);
+            //        CrearGridAutoInspec(sampleData1);
+            //    },
+            //    error: function (err) {
+            //        console.log(err);
+            //    }
+            //});
+        }
+
+        function CrearGridAutoInspec(sampleData) {
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: function (e) {
+                        // on success
+                        e.success(sampleData);
+                        // on failure
+                        //e.error("XHR response", "status code", "error message");
+                    }
+                },
+                error: function (e) {
+                    // handle data operation error
+                    alert("Status: " + e.status + "; Error message: " + e.errorThrown);
+                },
+                pageSize: 100,
+                batch: false,
+                schema: {
+                    model: {
+                        id: "id_inspeccion",
+                        fields: {
+                            id_inspeccion: { editable: false, type: "number" },
+                            propuesta: { editable: false, type: "string" },
+                            propietario: { editable: false, type: "string" },
+                            contactante: { editable: false, type: "string" },
+                            telefono_contactante: { editable: false, type: "string" },
+                            direccion: { editable: false, type: "string" },
+                            placa: { editable: false, type: "string" },
+                            estado: { editable: false, type: "string" },
+                            modelo: { editable: false, type: "string" },
+                            color: { editable: false, type: "string" },
+                            anio: { editable: false, type: "string" },
+                        }
+                    }
+                }
+            });
+
+            $("#gridAutoInspeccion").kendoGrid({
+                dataSource: dataSource,
+                rowTemplate: kendo.template($("#rowTemplate").html()),
+                messages: {
+                    empty: "No data",
+                    page: "Enter page",
+                    of: "from {0}",
+                    itemsPerPage: "data registros por pagina",
+                    first: "First Page",
+                    previous: "Previous Page",
+                    next: "Next Page",
+                    last: "Last Page",
+                    refresh: "Refresh data"
+                },
+                dataBound: onDataBound,
+                //selectable: "multiple",
+                navigatable: true,
+                //filterable: true,
+                filterable: {
+                    extra: false,
+                    operators: {
+                        string: {
+                            contains: "Contiene",
+                            eq: "Es igual a",
+                            startswith: "Inicia con",
+                            neq: "No es igual a"
+                        },
+                        number: {
+                            eq: "Es igual a",
+                            neq: "No es igual a",
+                            lt: "Menos que",
+                            lte: "Menos que o igual a",
+                            gt: "Mayor que",
+                            gte: "Mayor que o igual a"
+                        },
+                        date: {
+                            eq: "Es igual a",
+                            neq: "No es igual a",
+                            lt: "Es antes de",
+                            lte: "Es antes o igual a",
+                            gt: "Es después de",
+                            gte: "Es después o igual a"
+                        }
+                    }
+                },
+                sortable: { mode: "multiple" },
+                resizable: true,
+                //groupable: true,
+                columnMenu: false,
+                //pageable: {
+                //    refresh: true,
+                //    pageSizes: true,
+                //    buttonCount: 5,
+                //    pageSizes: [100, 300, 500]
+                //},
+                autoSync: true,
+                height: '200px',
+                columns: [
+                    //{ command: { text: "Iniciar", click: selecteAutoInspec1 }, title: " ", width: "60px", attributes: { "class": "MiraiRegular", style: "text-align:left;" }, },
+                    { field: "id_inspeccion", title: "", menu: false, width: "1px", filterable: false, hidden: true, },
+                    //{ field: "propuesta", title: "", menu: false, width: "1px", filterable: false, hidden: true, },
+                    //{ field: "propietario", title: "ASEGURADO", width: 140, attributes: { "class": "MiraiRegular", style: "" }, headerAttributes: { "class": "MiraiRegular", style: "text-align: center;" }, filterable: false, },
+                    //{ field: "placa", title: "PLACA", width: 70, attributes: { "class": "MiraiRegular", style: "" }, headerAttributes: { "class": "MiraiRegular", style: "text-align: center;" }, filterable: false, },
+
+                    //{ field: "contactante", title: "CONTACTANTE", width: 130, attributes: { style: "font-size:9px;font-family:arial;" }, headerAttributes: { style: "text-align: center;font-size: 9px;font-family:arial;" }, filterable: false, },
+                    //{ field: "telefono_contactante", title: "TELF.", width: 130, attributes: { style: "font-size:9px;font-family:arial;" }, headerAttributes: { style: "text-align: center;font-size: 9px;font-family:arial;" }, filterable: false, },
+                    //{ field: "direccion", title: "DIRECCION", width: 130, attributes: { style: "font-size:9px;font-family:arial;" }, headerAttributes: { style: "text-align: center;font-size: 9px;font-family:arial;" }, filterable: false, },
+                ],
+                editable: false
+            });
+        }
+
+        function onDataBound(e) {
+            if (!e.sender.dataSource.view().length) {
+                var colspan = e.sender.thead.find("th:visible").length,
+                    emptyRow = '<tr><td colspan="' + colspan + '">No se encontraron registros ...</td></tr>';
+                e.sender.tbody.parent().width(e.sender.thead.width()).end().html(emptyRow);
+            }
+        }
+
+        function selecteAutoInspec1(e) {
+            //e.preventDefault();
+            //var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+            var grid = $("#gridAutoInspeccion").data("kendoGrid");
+            var dataItem = grid.dataItem($(e).closest("tr")); // 'e' is the HTML element <a>
+            if (dataItem.id_inspeccion != null) {
+                var oIdCliente;
+                oIdCliente = document.getElementById("txtClienteIni").value;
+                window.location = 'legal.html?propu=' + dataItem.id_inspeccion + "&clie=" + oIdCliente;
+                //alert(dataItem.id_inspeccion);
+            }
+        }
+
+        function ProgramarFechaX() {
+            $('#myModalProgramacion').modal('show');
+        }
+
+        function GrabarProgramXT() {
+            var methodName = "GrabarInspeccionProgramada";
+            var oCliente = document.getElementById("txtClienteIni").value;
+            var cmbHora = document.getElementById("cmbHora");
+            var oHoraSelect = cmbHora.options[cmbHora.selectedIndex].text;
+            var XDTFechaHora = document.getElementById("txtFechaP").value + " " + oHoraSelect;
+            var oLugar = document.getElementById("txtDireccion").value;
+            var oDistrito = document.getElementById("txtDistrito").value;
+            var oCelular = document.getElementById("txtTelefono").value;
+
+            var oObjProgram = new Object();
+            oObjProgram.oPropuesta = oCliente;
+            oObjProgram.oFechaHora = document.getElementById("txtFechaP").value + " " + oHoraSelect;
+            oObjProgram.oLugar = oLugar;
+            oObjProgram.oDistrito = oDistrito;
+            oObjProgram.oCelular = oCelular;
+            oObjProgram.oToken = oToken;
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": URLX + methodName,
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/json"
+                },
+                "processData": false,
+                "data": JSON.stringify(oObjProgram),
+            }
+            $.ajax(settings).done(function (data1) {
+                if (data1 == '["1"]') {
+                    $('#myModalProgramacion').modal('hide');
+                    $('#myModalProgSuccesful').modal('show');
+                }
+                else {
+
+                }
+            }).fail(function (err) {
+                console.log(err);
+            }).always(function (Alwa) {
+                //alert(Alwa);
+            });
+        }
+    </script>
+    <script id="rowTemplate" type="text/x-kendo-tmpl">
+        <tr data-uid="#: id_inspeccion #">
+            <td class="photoA365">
+                <button class="buttonA365" onclick="selecteAutoInspec1(this)">Iniciar</button>
+            </td>
+            <td class="detailsA365">
+                <span class="nameA365">#: propietario# </span>
+                <span class="titleA365">Estado: #: estado #</span>
+                <span class="titleA365">Placa: #: placa #</span>
+                <span class="titleA365">Modelo: #: modelo #</span>
+                <span class="titleA365">Color: #: color #</span>
+                <span class="titleA365">Año: #: anio #</span>
+            </td>
+        </tr>
+    </script>
+    <style>
+        .photoA365 {
+            text-align: left;
+            width: 35%;
+            /*color:#ED6E04;
+            background-color:aliceblue;*/
+        }
+
+        .buttonA365 {
+            background-color: #ED6E04;
+            color: white;
+            border: none;
+            height: 35px;
+            width: 45px;
+        }
+
+        .detailsA365 {
+            width: 65%;
+            font-size: 13px;
+        }
+
+        .nameA365 {
+            display: block;
+            font-size: 18px;
+        }
+
+        .titleA365 {
+            display: block;
+            padding-top: 0.1em;
+        }
+
+        /*.employeeID,
+                  .country {
+                    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+                    font-size: 50px;
+                    font-weight: bold;
+                    color: #898989;
+                }*/
+
+        td.photo {
+            text-align: left;
+        }
+
+        .k-grid-header .k-header {
+            padding: 10px 20px;
+        }
+
+        .k-grid td {
+            background: -moz-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0.15)));
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.15) 100%);
+            background: -o-linear-gradient(top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.15) 100%);
+            background: -ms-linear-gradient(top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.15) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.15) 100%);
+            padding: 20px;
+        }
+
+        .k-grid .k-alt td {
+            background: -moz-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.2)), color-stop(100%,rgba(0,0,0,0.1)));
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.1) 100%);
+            background: -o-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.1) 100%);
+            background: -ms-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.1) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.1) 100%);
+        }
+    </style>
+    <!-- Your GOOGLE ANALYTICS CODE Below -->
+    <!--<script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>-->
+</body>
+</html>
